@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Footer } from './components/Footer';
+import { Logout } from './components/Logoutage';
+import { Content } from './components/MainContent';
+import { SideBar } from './components/Sidebar';
+import { TopBar } from './components/Topbar';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Page Wrapper */}
+      <div id="wrapper">
+        <SideBar />
+        {/* Content Wrapper */}
+        <div id="content-wrapper" class="d-flex flex-column">
+          {/*Main Content */}
+          <div id="content">
+            <TopBar />
+            {/* Begin Page Content  */}
+            <div class="container-fluid">
+              <Content />
+            </div>
+          </div>
+          {/* Footer  */}
+          <Footer />
+        </div>
+      </div>
+      <Logout />
     </div>
   );
 }
